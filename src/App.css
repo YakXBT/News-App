@@ -2,12 +2,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
 
 body {
   font-family: sans-serif;
   padding: 0.2em;
+  background-color: #ffffff; 
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .title {
@@ -27,10 +34,11 @@ body {
   margin: 1em;
   font-size: 1.2em;
   padding: 0.5em 1em;
-  background: #eee;
-  border-radius: 3 em;
+  border-radius: 3em;
   cursor: pointer;
-  transition: 0.3s
+  transition: 0.3s;
+  background: #eee;
+  color: #000; 
 }
 
 .menu .inactive {
@@ -49,6 +57,44 @@ body {
   background: #dddddd;
 }
 
+.menu button {
+  padding: 0.5em;
+  border: none;
+  background-color: transparent;
+  color: #ffffff; 
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2em;
+  outline: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu button:hover {
+  background-color: #transparent; 
+}
+
+.dark-theme .menu button {
+  background-color: #555; 
+}
+
+.dark-theme .menu button:hover {
+  background-color: transparent; 
+}
+
+.menu button::before {
+  content: '\1F319'; 
+}
+
+.dark-theme .menu button::before {
+  content: '\1F31A'; 
+}
+
+.menu button:active {
+  transform: scale(0.95);
+}
+
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -62,11 +108,11 @@ body {
 
 .article {
   background: #fff;
-  box-shadow: 0 0 10px rgba(0 , 0 , 0 , .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   width: 25em;
   border-radius: 8px;
   overflow: hidden;
-  text-decoration : none;
+  text-decoration: none;
   color: #000;
   padding-bottom: 0.5em;
   transition: 0.3s;
@@ -75,14 +121,14 @@ body {
 }
 
 .article:hover {
-  box-shadow: 0 0 20px rgba(0 , 0 , 0 , .2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
 .article-content {
-  padding: 0.5em 1em ;
-  display: flex ;
-  flex-direction: column ;
-  justify-content: space-between:
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 1em;
   flex-grow: 1;
@@ -102,7 +148,7 @@ body {
   height: 15em;
 }
 
-.article-image img{
+.article-image img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,11 +163,11 @@ body {
 }
 
 .article p {
-  line-heigt: 25px;
+  line-height: 25px;
   color: #555;
 }
 
-@media screen and (max-width: 1330px)  {
+@media screen and (max-width: 1330px) {
   html {
     font-size: 14px;
   }
