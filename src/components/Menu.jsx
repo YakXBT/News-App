@@ -1,7 +1,4 @@
 function Menu({active, setActive, setCategory}) {   
-console.log('active:', active);
-  console.log('setActive:', setActive);
-  console.log('setCategory:', setCategory);
     const links = [
         { id: 1, name: "General", value: "general" },
         { id: 2, name: "Business", value: "business" },
