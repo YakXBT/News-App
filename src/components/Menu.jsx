@@ -1,28 +1,36 @@
-import React from 'react';
+function Menu({ active, setActive, setCategory, darkTheme, setDarkTheme }) {
+  const links = [
+    { id: 1, name: "General", value: "general" },
+    { id: 2, name: "Business", value: "business" },
+    { id: 3, name: "Entertainment", value: "entertainment" },
+    { id: 4, name: "Health", value: "health" },
+    { id: 5, name: "Science", value: "science" },
+    { id: 6, name: "Sports", value: "sports" },
+    { id: 7, name: "Technology", value: "technology" },
+  ];
 
-function Menu({ active, setActive, setCategory, setDarkTheme, darkTheme }) {
-  const categories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
-
-  const handleCategoryChange = (category) => {
-    setCategory(category);
-    setActive(categories.indexOf(category) + 1);
-  };
-
-  const toggleTheme = () => {
-    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
-  };
+  function onClick(id, value) {
+    setActive(id);
+    setCategory(value);
+  }
 
   return (
-    <div className="menu">
+    <nav className="menu">
       <ul>
-        {categories.map((cat, index) => (
-          <li key={index} className={index + 1 === active ? 'active' : ''} onClick={() => handleCategoryChange(cat)}>
-            {cat}
+        {links.map(link => (
+          <li
+            key={link.id}
+            className={active === link.id ? "active" : "inactive"}
+            onClick={() => onClick(link.id, link.value)}
+          >
+            {link.name}
           </li>
         ))}
       </ul>
-      <button onClick={toggleTheme}>{darkTheme}</button>
-    </div>
+      <button onClick={() => setDarkTheme((prevDarkTheme) => !prevDarkTheme)}>
+        {darkTheme}
+      </button>
+    </nav>
   );
 }
 
