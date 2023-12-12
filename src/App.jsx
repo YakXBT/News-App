@@ -61,7 +61,7 @@ function App() {
       window.scrollTo(0, start + progress * (0 - start));
   
       if (progress < 1) {
-        requestAnimationFrame(animateS+croll);
+        requestAnimationFrame(animateScroll); // Fix the typo here
       }
     };
   
