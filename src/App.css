@@ -167,6 +167,20 @@ body {
   color: #555;
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  opacity: 1;
+}
+
 @media screen and (max-width: 1330px) {
   html {
     font-size: 14px;
