@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=0c53285ca4174c63866b1f4c449a9e46`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=09c225d2b55c4c8badb91bcb645b6425`)
       .then(res => res.json())
       .then(data => setItems(data.articles));
   }, [category]);
@@ -61,7 +61,7 @@ function App() {
       window.scrollTo(0, start + progress * (0 - start));
   
       if (progress < 1) {
-        requestAnimationFrame(animateScroll); // Fix the typo here
+        requestAnimationFrame(animateScroll);
       }
     };
   
